@@ -46,7 +46,7 @@ class TestPC(unittest.TestCase):
 
     def test03(self):
         count = 0
-        nums = 12
+        nums = 5
         while (count < nums):
             print("time.sleep(3)")
             print("pyautogui.click()")
