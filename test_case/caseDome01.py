@@ -17,7 +17,6 @@ import unittest
 # except:
 #     print("找不到图片")
 
-
 ###
 # image图像比较
 ###

@@ -198,18 +198,57 @@ class testOplayer(unittest.TestCase):
         pyautogui.click(1611, 858)  #发送盖章礼物
         pyautogui.click(1611, 1000)
 
-    #房间大banner跳转
+    #房间大banner跳转及钓鱼操作
     def testOplayer11(self):
         count = 0
         nums = 3
         while (count < nums):
             time.sleep(1)
-            tia = auto.locateOnScreen('../source_photoes/room/banner.png')
+            tia = auto.locateOnScreen('../source_photoes/room/daojubanner.png')
             if (tia != None):
-                auto.screenshot('../photoes/room/banner.png', region=(1216, 714, 103, 158))
+                auto.screenshot('../photoes/room/daojubanner.png', region=(1216, 714, 103, 158))
                 pyautogui.click(1276, 783)
             count = count + 1
+        time.sleep(3)
+        pyautogui.click(789, 509)
+        time.sleep(3)
+        pyautogui.scroll(-20000)
+        time.sleep(3)
+        pyautogui.click(1092, 332)
+        time.sleep(3)
+        pyautogui.click(871, 625)
+        time.sleep(3)
+        pyautogui.click(958, 628)
+        time.sleep(3)
+        pyautogui.click(1078, 816)
 
+        time.sleep(3)
+        pyautogui.click(956, 557)
+        time.sleep(5)
+        pyautogui.click(1151, 419)  #单次池塘钓鱼
+
+        time.sleep(3)
+        pyautogui.click(1078, 757)
+        time.sleep(3)
+        pyautogui.click(956, 552)   #十连池塘钓鱼
+        time.sleep(5)
+        pyautogui.click(1155, 417)
+
+        time.sleep(3)
+        pyautogui.click(1052, 329)
+        time.sleep(3)
+        pyautogui.click(959, 552)   #单次海边钓鱼
+        time.sleep(5)
+        pyautogui.click(1153, 420)
+
+        time.sleep(3)
+        pyautogui.click(1082, 756)
+        time.sleep(3)
+        pyautogui.click(960, 551)   #十连海边钓鱼
+        time.sleep(5)
+        pyautogui.click(1153, 302)
+        time.sleep(1)
+        pyautogui.click(1174, 322)  #关闭钓鱼窗口
 
 
 
