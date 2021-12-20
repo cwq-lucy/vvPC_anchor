@@ -7,7 +7,7 @@ import numpy as np
 import pyautogui as auto
 
 class testOplayer(unittest.TestCase):
-    # 手机号登录
+    #开播操作
     #@unittest.skip("skipping")
     def testOplayer01(self):
         time.sleep(10)
@@ -17,10 +17,15 @@ class testOplayer(unittest.TestCase):
         time.sleep(3)
         pyautogui.click(940, 652)
         time.sleep(3)
+        pyautogui.click(1266, 221)
+        time.sleep(3)
         pyautogui.click(965, 878)
+        time.sleep(3)
+        pyautogui.click(1266, 221)
 
     # 查看潜力用户
     def testOplayer02(self):
+        time.sleep(3)
         pyautogui.click(553, 200)
         time.sleep(3)
         pyautogui.click(810, 340)
@@ -192,3 +197,6 @@ class testOplayer(unittest.TestCase):
         time.sleep(3)
         pyautogui.click(1611, 858)  #发送盖章礼物
         pyautogui.click(1611, 1000)
+
+if __name__ == '__main__':
+    unittest.main()  # unittest 的执行

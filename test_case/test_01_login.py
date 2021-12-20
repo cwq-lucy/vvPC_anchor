@@ -14,7 +14,7 @@ import pyautogui as auto
 # @unittest.skip("skipping")
 class testLogin(unittest.TestCase):
     # 手机号登录
-    #@unittest.skip("skipping")
+    @unittest.skip("skipping")
     def testLogin01(self):
         # 移至应用程序桌面图标，双击打开运行应用程序
         pyautogui.moveTo(1025, 541, duration=1)
@@ -34,7 +34,7 @@ class testLogin(unittest.TestCase):
         pyautogui.click(953, 692)
 
     # 用户账号不存在
-    # @unittest.skip("skipping")
+    @unittest.skip("skipping")
     def testLogin02(self):
         time.sleep(10)
         # 移至应用程序桌面图标，双击打开运行应用程序
@@ -51,6 +51,7 @@ class testLogin(unittest.TestCase):
         pyautogui.write("110016117")
         time.sleep(3)
         pyautogui.click(953, 692)
+
 
     # 密码错误
     @unittest.skip("skipping")
