@@ -198,5 +198,20 @@ class testOplayer(unittest.TestCase):
         pyautogui.click(1611, 858)  #发送盖章礼物
         pyautogui.click(1611, 1000)
 
+    #房间大banner跳转
+    def testOplayer11(self):
+        count = 0
+        nums = 3
+        while (count < nums):
+            time.sleep(1)
+            tia = auto.locateOnScreen('../source_photoes/room/banner.png')
+            if (tia != None):
+                auto.screenshot('../photoes/room/banner.png', region=(1216, 714, 103, 158))
+                pyautogui.click(1276, 783)
+            count = count + 1
+
+
+
+
 if __name__ == '__main__':
     unittest.main()  # unittest 的执行
