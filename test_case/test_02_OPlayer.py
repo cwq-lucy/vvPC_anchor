@@ -7,8 +7,8 @@ import numpy as np
 import pyautogui as auto
 
 class testOplayer(unittest.TestCase):
+
     #开播操作
-    #@unittest.skip("skipping")
     def testOplayer01(self):
         time.sleep(10)
         pyautogui.click(1737, 206)
@@ -198,17 +198,21 @@ class testOplayer(unittest.TestCase):
         pyautogui.click(1611, 858)  #发送盖章礼物
         pyautogui.click(1611, 1000)
 
-    #房间大banner跳转及钓鱼操作
+    #房间大banner跳转
     def testOplayer11(self):
         count = 0
-        nums = 3
+        nums = 5
         while (count < nums):
             time.sleep(1)
             tia = auto.locateOnScreen('../source_photoes/room/daojubanner.png')
             if (tia != None):
                 auto.screenshot('../photoes/room/daojubanner.png', region=(1216, 714, 103, 158))
                 pyautogui.click(1276, 783)
+                break
             count = count + 1
+
+    #钓鱼操作
+    def testOplayer12(self):
         time.sleep(3)
         pyautogui.click(789, 509)
         time.sleep(3)
@@ -225,31 +229,132 @@ class testOplayer(unittest.TestCase):
         time.sleep(3)
         pyautogui.click(956, 557)
         time.sleep(5)
-        pyautogui.click(1151, 419)  #单次池塘钓鱼
+        pyautogui.click(1151, 419)  # 单次池塘钓鱼
 
         time.sleep(3)
         pyautogui.click(1078, 757)
         time.sleep(3)
-        pyautogui.click(956, 552)   #十连池塘钓鱼
+        pyautogui.click(956, 552)  # 十连池塘钓鱼
         time.sleep(5)
         pyautogui.click(1155, 417)
 
         time.sleep(3)
         pyautogui.click(1052, 329)
         time.sleep(3)
-        pyautogui.click(959, 552)   #单次海边钓鱼
+        pyautogui.click(959, 552)  # 单次海边钓鱼
         time.sleep(5)
         pyautogui.click(1153, 420)
 
         time.sleep(3)
         pyautogui.click(1082, 756)
         time.sleep(3)
-        pyautogui.click(960, 551)   #十连海边钓鱼
+        pyautogui.click(960, 551)  # 十连海边钓鱼
         time.sleep(5)
         pyautogui.click(1153, 302)
         time.sleep(1)
-        pyautogui.click(1174, 322)  #关闭钓鱼窗口
+        pyautogui.click(1174, 322)  # 关闭钓鱼窗口
 
+    #宣言操作
+    def testOplayer13(self):
+        self.testOplayer11()
+
+        time.sleep(5)
+        pyautogui.click(903, 509)
+        pyautogui.scroll(-20000)
+        time.sleep(3)
+        pyautogui.click(1095, 326)
+        time.sleep(3)
+        pyautogui.click(872, 626)
+        time.sleep(3)
+        pyautogui.click(955, 629)
+        time.sleep(3)
+        pyautogui.click(1075, 814)  #跳转宣言界面
+
+        time.sleep(3)
+        pyautogui.click(807, 490)
+        time.sleep(3)
+        pyautogui.click(883, 759)
+        time.sleep(3)
+        pyautogui.click(920, 687)
+
+        time.sleep(6)
+        pyautogui.click(958, 491)
+        time.sleep(3)
+        pyautogui.click(887, 756)   #批量10个宣言
+
+        time.sleep(6)
+        pyautogui.click(1102, 493 )
+        time.sleep(3)
+        pyautogui.click(885, 755)   #批量50个宣言
+
+        time.sleep(6)
+        pyautogui.click(1178, 335)  #关闭宣言弹窗
+
+    # 凤凰进化
+    # 抽取蛋
+    def testOplayer14(self):
+        self.testOplayer11()
+
+        time.sleep(5)
+        pyautogui.click(1026, 512)
+        pyautogui.scroll(-20000)
+        time.sleep(3)
+        pyautogui.click(1100, 354)
+        time.sleep(3)
+        pyautogui.click(871, 629)
+        time.sleep(3)
+        pyautogui.click(955, 627)
+        time.sleep(3)
+        pyautogui.click(1075, 814)  #跳转凤凰界面
+
+        time.sleep(3)
+        pyautogui.click(803, 560)
+        time.sleep(3)
+        pyautogui.click(825, 849)
+        time.sleep(10)
+        pyautogui.doubleClick(954, 720)
+        time.sleep(3)
+        pyautogui.click(954, 722)  #召唤1次吉利蛋
+
+        time.sleep(3)
+        pyautogui.click(955, 849)
+        time.sleep(10)
+        pyautogui.doubleClick(954, 720)
+        time.sleep(3)
+        pyautogui.click(954, 722)  #召唤5次吉利蛋
+
+        time.sleep(3)
+        pyautogui.click(1091, 847)
+        time.sleep(10)
+        pyautogui.doubleClick(954, 720)
+        time.sleep(3)
+        pyautogui.click(954, 722)  #召唤10次吉利蛋
+
+    # 凤凰进化
+    def testOplayer15(self):
+        time.sleep(3)
+        pyautogui.click(1096, 561)
+        time.sleep(3)
+        pyautogui.click(826, 847)
+        time.sleep(10)
+        pyautogui.click(948, 720)
+
+        time.sleep(3)
+        pyautogui.click(956, 849)
+        time.sleep(10)
+        pyautogui.click(948, 720)
+
+        time.sleep(3)
+        pyautogui.click(1085, 851)
+        time.sleep(10)
+        pyautogui.click(948, 720)
+
+        time.sleep(3)
+        pyautogui.click(1188, 352)
+
+    # 购买座驾
+    def testOplayer16(self):
+        time.sleep(3)
 
 
 if __name__ == '__main__':

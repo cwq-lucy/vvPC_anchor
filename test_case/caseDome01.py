@@ -55,5 +55,18 @@ class TestPC(unittest.TestCase):
         print("\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 
 
+    def test04(self):
+        count = 0
+        nums = 500
+        while (count < nums):
+            time.sleep(10)
+            pyautogui.moveTo(522, 371)
+            time.sleep(10)
+            pyautogui.moveTo(767, 371)
+            count = count + 1
+
+        time.sleep(1)
+        print("\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+
 if __name__ == '__main__':
     unittest.main()  # unittest 的执行
