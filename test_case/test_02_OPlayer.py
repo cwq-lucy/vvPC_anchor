@@ -354,7 +354,17 @@ class testOplayer(unittest.TestCase):
 
     # 购买座驾
     def testOplayer16(self):
+        self.testOplayer11()
         time.sleep(3)
+        pyautogui.click(1137, 511)
+        time.sleep(3)
+        pyautogui.click(1086, 716)
+        time.sleep(3)
+        pyautogui.click(875, 626)
+        time.sleep(3)
+        pyautogui.click(954, 626)
+        time.sleep(3)
+        pyautogui.click(1179, 184)
 
 
 if __name__ == '__main__':
