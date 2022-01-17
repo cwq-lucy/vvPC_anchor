@@ -25,7 +25,7 @@ class testOplayer(unittest.TestCase):
 
     # 查看潜力用户
     def testOplayer02(self):
-        time.sleep(3)
+        time.sleep(5)
         pyautogui.click(553, 200)
         time.sleep(3)
         pyautogui.click(810, 340)
@@ -201,12 +201,12 @@ class testOplayer(unittest.TestCase):
     #房间大banner跳转
     def testOplayer11(self):
         count = 0
-        nums = 5
+        nums = 6
         while (count < nums):
             time.sleep(1)
             tia = auto.locateOnScreen('../source_photoes/room/daojubanner.png')
             if (tia != None):
-                auto.screenshot('../photoes/room/daojubanner.png', region=(1216, 714, 103, 158))
+                auto.screenshot('../photoes/room/daojubanner.png', region=(1227, 732, 92, 125))
                 pyautogui.click(1276, 783)
                 break
             count = count + 1
@@ -249,9 +249,9 @@ class testOplayer(unittest.TestCase):
         pyautogui.click(1082, 756)
         time.sleep(3)
         pyautogui.click(960, 551)  # 十连海边钓鱼
-        time.sleep(5)
+        time.sleep(8)
         pyautogui.click(1153, 302)
-        time.sleep(1)
+        time.sleep(3)
         pyautogui.click(1174, 322)  # 关闭钓鱼窗口
 
     #宣言操作

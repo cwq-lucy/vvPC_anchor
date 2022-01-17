@@ -82,7 +82,7 @@ class testLogin(unittest.TestCase):
 
         pyautogui.doubleClick(906, 551)
         time.sleep(1)
-        pyautogui.write("110013889")
+        pyautogui.write("110025292")
         time.sleep(3)
         pyautogui.doubleClick(910, 608)
         time.sleep(1)

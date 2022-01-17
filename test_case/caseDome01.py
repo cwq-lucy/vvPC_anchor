@@ -33,6 +33,7 @@ class TestPC(unittest.TestCase):
         result = not np.any(difference)
         print(result)
 
+    #定位鼠标坐标
     # @unittest.skip("skipping")
     def test02(self):
         try:
@@ -43,6 +44,7 @@ class TestPC(unittest.TestCase):
         except:
             pass
 
+    #代码生成
     def test03(self):
         count = 0
         nums = 5
@@ -54,7 +56,7 @@ class TestPC(unittest.TestCase):
         time.sleep(1)
         print("\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 
-
+    #针对banner图轮播，进行循环截图断言
     def test04(self):
         count = 0
         nums = 500
@@ -67,6 +69,33 @@ class TestPC(unittest.TestCase):
 
         time.sleep(1)
         print("\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+
+    #针对视频分解为静态图
+    def test05(self):
+        cap = cv2.VideoCapture(r'D:\ApowerREC\test.mp4')
+        isOpened = cap.isOpened()
+        fps = cap.get(cv2.CAP_PROP_FPS)  # 帧率<每秒中展示多少张图片>
+        width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))  # 获取宽度
+        height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))  # 获取宽度
+        print(fps, width, height)
+
+        i = 0
+        while (isOpened):  # 当视频被打开了
+            if i == 5:
+                break  # 读取10张图片就够了
+            else:
+                i = i + 1  # i++
+                (flag, frame) = cap.read()  # 读取每一张 flag<读取是否成功> frame<内容>
+                filename = r'D:\ApowerREC\test\image' + str(i) + '.jpg' #指定图片保存路径
+                print(filename)
+                if flag == True:  # 读取成功的话
+                    cv2.imwrite(filename, frame, [cv2.IMWRITE_JPEG_QUALITY, 100])
+                # 写入文件，1 文件名 2 文件内容 3 质量设置
+        print("end!")
+
+
+
+
 
 if __name__ == '__main__':
     unittest.main()  # unittest 的执行
