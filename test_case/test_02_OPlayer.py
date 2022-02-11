@@ -26,7 +26,7 @@ class testOplayer(unittest.TestCase):
     # 查看潜力用户
     def testOplayer02(self):
         time.sleep(5)
-        pyautogui.click(553, 200)
+        pyautogui.click(568, 131)
         time.sleep(3)
         pyautogui.click(810, 340)
         time.sleep(3)
@@ -53,11 +53,11 @@ class testOplayer(unittest.TestCase):
     # 查看公聊发送消息
     def testOplayer04(self):
         time.sleep(3)
-        pyautogui.click(1375, 130)
+        pyautogui.click(1350, 716)
         time.sleep(3)
-        pyautogui.click(1351, 701)
+        pyautogui.click(1398, 618)
         time.sleep(3)
-        pyautogui.click(1373, 645)
+        pyautogui.click(1401, 818)
         time.sleep(3)
         pyautogui.write("181818")
         time.sleep(3)
@@ -67,11 +67,11 @@ class testOplayer(unittest.TestCase):
     # 贵族气泡选择及发送消息
     def testOplayer05(self):
         time.sleep(3)
-        pyautogui.click(1386, 696)
+        pyautogui.click(1385, 714)
         time.sleep(3)
-        pyautogui.click(901, 428)
+        pyautogui.click(904, 425)
         time.sleep(3)
-        pyautogui.click(1043, 663)
+        pyautogui.click(1039, 661)
         time.sleep(3)
         pyautogui.click(961, 581)
         time.sleep(3)
@@ -81,7 +81,8 @@ class testOplayer(unittest.TestCase):
         time.sleep(3)
         pyautogui.click(1556, 897)
         time.sleep(3)
-        pyautogui.click(1384, 697)
+
+        pyautogui.click(1385, 714)
         time.sleep(3)
         pyautogui.click(770, 429)
         time.sleep(3)
@@ -110,7 +111,7 @@ class testOplayer(unittest.TestCase):
         time.sleep(3)
         pyautogui.write("181818")
         time.sleep(3)
-        pyautogui.click(1348, 696)
+        pyautogui.click(1350, 716)
         time.sleep(3)
         pyautogui.click(1351, 482)
         time.sleep(3)
