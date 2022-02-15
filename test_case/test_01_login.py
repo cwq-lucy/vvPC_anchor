@@ -52,7 +52,6 @@ class testLogin(unittest.TestCase):
         time.sleep(3)
         pyautogui.click(953, 692)
 
-
     # 密码错误
     @unittest.skip("skipping")
     def testLogin03(self):
@@ -70,7 +69,6 @@ class testLogin(unittest.TestCase):
         pyautogui.write("cuowumima1")
         time.sleep(3)
         pyautogui.click(953, 692)
-
 
     #@unittest.skip("skipping")
     def testLogin04(self):
@@ -103,7 +101,6 @@ class testLogin(unittest.TestCase):
         difference = cv2.subtract(image1, image2)
         result = not np.any(difference)
         self.assertTrue(result, "登录失败了~")
-
 
 if __name__ == '__main__':
     unittest.main()  # unittest 的执行

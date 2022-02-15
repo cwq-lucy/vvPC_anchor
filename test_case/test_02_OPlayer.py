@@ -123,11 +123,24 @@ class testOplayer(unittest.TestCase):
         time.sleep(3)
         pyautogui.click(1429, 748)
         time.sleep(3)
-        pyautogui.write("181818")
+        pyautogui.write("18181818")
         time.sleep(3)
         pyautogui.click(1556, 897)
         time.sleep(3)
 
+        bubble = auto.locateOnScreen('../source_photoes/room/18181818.png')   #获取本地图片位置
+        print(bubble)
+        print(bubble.left)
+        auto.screenshot('../photoes/room/18181818.png', region=(bubble.left, bubble.top, bubble.width, bubble.height))  # 截取登录成功图片
+
+        # 图片断言
+        image1 = cv2.imread("../source_photoes/room/18181818.png")
+        image2 = cv2.imread("../photoes/room/18181818.png")
+        difference = cv2.subtract(image1, image2)
+        result = not np.any(difference)
+        self.assertTrue(result, "发送气泡公聊信息失败~")
+
+        time.sleep(5)
         pyautogui.click(1385, 714)
         time.sleep(3)
         pyautogui.click(770, 429)
@@ -138,9 +151,21 @@ class testOplayer(unittest.TestCase):
         time.sleep(3)
         pyautogui.click(1400, 766)
         time.sleep(3)
-        pyautogui.write("181818")
+        pyautogui.write("1818181818")
         time.sleep(3)
         pyautogui.click(1552, 898)
+
+        Nobubble = auto.locateOnScreen('../source_photoes/room/1818181818.png')   #获取本地图片位置
+        # print(login)
+        # print(login.left)
+        auto.screenshot('../photoes/room/1818181818.png', region=(Nobubble.left, Nobubble.top, Nobubble.width, Nobubble.height))  # 截取登录成功图片
+
+        # 图片断言
+        image1 = cv2.imread("../source_photoes/room/1818181818.png")
+        image2 = cv2.imread("../photoes/room/1818181818.png")
+        difference = cv2.subtract(image1, image2)
+        result = not np.any(difference)
+        self.assertTrue(result, "发送不带气泡公聊信息失败~")
 
     # 查看私聊及发送消息
     def testOplayer06(self):
@@ -155,13 +180,27 @@ class testOplayer(unittest.TestCase):
         time.sleep(3)
         pyautogui.click(1395, 740)
         time.sleep(3)
-        pyautogui.write("181818")
+        pyautogui.write("66666666")
         time.sleep(3)
         pyautogui.click(1350, 716)
         time.sleep(3)
         pyautogui.click(1351, 482)
         time.sleep(3)
         pyautogui.click(1558, 897)
+        time.sleep(3)
+
+        login = auto.locateOnScreen('../source_photoes/room/66666666.png')   #获取本地图片位置
+        # print(login)
+        # print(login.left)
+        time.sleep(3)
+        auto.screenshot('../photoes/room/66666666.png', region=(login.left, login.top, login.width, login.height))  # 截取登录成功图片
+
+        # 图片断言
+        image1 = cv2.imread("../source_photoes/room/66666666.png")
+        image2 = cv2.imread("../photoes/room/66666666.png")
+        difference = cv2.subtract(image1, image2)
+        result = not np.any(difference)
+        self.assertTrue(result, "发送私聊信息失败~")
 
     # 添加整蛊项目
     def testOplayer07(self):

@@ -5,7 +5,6 @@ import pyautogui
 import time
 import unittest
 
-
 # try:
 #     number7_location = auto.locateOnScreen('../source_photoes/login_gui.png')   #传入按钮的图片
 #     print(number7_location)  # 返回屏幕所在位置
@@ -32,8 +31,6 @@ class TestPC(unittest.TestCase):
         print(difference)
         result = not np.any(difference)
         print(result)
-
-
 
         # login = auto.locateOnScreen('../source_photoes/login/login_success.png')   #获取本地图片位置
         # print(login)
@@ -105,9 +102,6 @@ class TestPC(unittest.TestCase):
                     cv2.imwrite(filename, frame, [cv2.IMWRITE_JPEG_QUALITY, 100])
                 # 写入文件，1 文件名 2 文件内容 3 质量设置
         print("end!")
-
-
-
 
 
 if __name__ == '__main__':
