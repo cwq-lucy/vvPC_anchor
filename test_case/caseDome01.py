@@ -33,6 +33,19 @@ class TestPC(unittest.TestCase):
         result = not np.any(difference)
         print(result)
 
+
+
+        # login = auto.locateOnScreen('../source_photoes/login/login_success.png')   #获取本地图片位置
+        # print(login)
+        # auto.screenshot('../photoes/login/login_success.png', region=(1663, 57, 94, 27))  # 截取登录成功图片
+
+        # # 图片断言
+        # image1 = cv2.imread("../source_photoes/login/user_error.png")
+        # image2 = cv2.imread("../photoes/login/user_error.png")
+        # difference = cv2.subtract(image1, image2)
+        # result = not np.any(difference)
+        # self.assertTrue(result, "图片飞走了~")
+
     #定位鼠标坐标
     # @unittest.skip("skipping")
     def test02(self):

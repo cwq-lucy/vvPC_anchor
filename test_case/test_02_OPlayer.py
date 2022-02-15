@@ -22,6 +22,18 @@ class testOplayer(unittest.TestCase):
         pyautogui.click(965, 878)
         time.sleep(3)
         pyautogui.click(1266, 221)
+        time.sleep(5)
+
+        login = auto.locateOnScreen('../source_photoes/room/openPlay_success.png')   #获取本地图片位置
+        #print(login)
+        auto.screenshot('../photoes/room/openPlay_success.png', region=(321, 70, 238, 38))  # 截取登录成功图片
+
+        # 图片断言
+        image1 = cv2.imread("../source_photoes/login/login_success.png")
+        image2 = cv2.imread("../photoes/login/login_success.png")
+        difference = cv2.subtract(image1, image2)
+        result = not np.any(difference)
+        self.assertTrue(result, "开播失败了~")
 
     # 查看潜力用户
     def testOplayer02(self):
@@ -38,6 +50,18 @@ class testOplayer(unittest.TestCase):
         time.sleep(3)
         pyautogui.click(1141, 397)
         time.sleep(3)
+
+        login = auto.locateOnScreen('../source_photoes/room/capacityUser.png')   #获取本地图片位置
+        #print(login)
+        auto.screenshot('../photoes/room/capacityUser.png', region=(727, 260, 160, 42))  # 截取登录成功图片
+
+        # 图片断言
+        image1 = cv2.imread("../source_photoes/room/capacityUser.png")
+        image2 = cv2.imread("../photoes/room/capacityUser.png")
+        difference = cv2.subtract(image1, image2)
+        result = not np.any(difference)
+        self.assertTrue(result, "查看潜力用户列表失败了~")
+
         pyautogui.click(1173, 280)
         time.sleep(3)
 
@@ -49,6 +73,16 @@ class testOplayer(unittest.TestCase):
         pyautogui.click(409, 317)
         time.sleep(3)
         pyautogui.click(587, 320)
+        login = auto.locateOnScreen('../source_photoes/room/House_guest_list.png')   #获取本地图片位置
+        #print(login)
+        auto.screenshot('../photoes/room/House_guest_list.png', region=(325, 265, 85, 37))  # 截取登录成功图片
+
+        # 图片断言
+        image1 = cv2.imread("../source_photoes/room/House_guest_list.png")
+        image2 = cv2.imread("../photoes/room/House_guest_list.png")
+        difference = cv2.subtract(image1, image2)
+        result = not np.any(difference)
+        self.assertTrue(result, "查看豪客榜失败了~")
 
     # 查看公聊发送消息
     def testOplayer04(self):
@@ -63,6 +97,18 @@ class testOplayer(unittest.TestCase):
         time.sleep(3)
         pyautogui.click(1566, 895)
         time.sleep(3)
+
+        login = auto.locateOnScreen('../source_photoes/room/181818.png')   #获取本地图片位置
+        # print(login)
+        # print(login.left)
+        auto.screenshot('../photoes/room/181818.png', region=(login.left, login.top, login.width, login.height))  # 截取登录成功图片
+
+        # 图片断言
+        image1 = cv2.imread("../source_photoes/room/181818.png")
+        image2 = cv2.imread("../photoes/room/181818.png")
+        difference = cv2.subtract(image1, image2)
+        result = not np.any(difference)
+        self.assertTrue(result, "发送公聊信息失败~")
 
     # 贵族气泡选择及发送消息
     def testOplayer05(self):

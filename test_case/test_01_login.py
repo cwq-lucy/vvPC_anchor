@@ -92,6 +92,18 @@ class testLogin(unittest.TestCase):
         time.sleep(3)
         pyautogui.click(953, 692)
 
+        time.sleep(5)
+        login = auto.locateOnScreen('../source_photoes/login/login_success.png')   #获取本地图片位置
+        #print(login)
+        auto.screenshot('../photoes/login/login_success.png', region=(1663, 57, 94, 27))  # 截取登录成功图片
+
+        # 图片断言
+        image1 = cv2.imread("../source_photoes/login/login_success.png")
+        image2 = cv2.imread("../photoes/login/login_success.png")
+        difference = cv2.subtract(image1, image2)
+        result = not np.any(difference)
+        self.assertTrue(result, "登录失败了~")
+
 
 if __name__ == '__main__':
     unittest.main()  # unittest 的执行
