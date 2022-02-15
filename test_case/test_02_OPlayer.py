@@ -261,13 +261,40 @@ class testOplayer(unittest.TestCase):
         pyautogui.click(1335, 640)
         time.sleep(3)
         pyautogui.click(1610, 857)  #发送小星星
+        time.sleep(3)
+
+        freegift = auto.locateOnScreen('../source_photoes/room/freegift.png')   #获取本地图片位置
+        # print(login)
+        # print(login.left)
+        time.sleep(3)
+        auto.screenshot('../photoes/room/freegift.png', region=(freegift.left, freegift.top, freegift.width, freegift.height))  # 截取登录成功图片
+
+        # 图片断言
+        image1 = cv2.imread("../source_photoes/room/freegift.png")
+        image2 = cv2.imread("../photoes/room/freegift.png")
+        difference = cv2.subtract(image1, image2)
+        result = not np.any(difference)
+        self.assertTrue(result, "发送醒狮礼物失败~")
 
         time.sleep(3)
         pyautogui.click(1316, 586)
         time.sleep(3)
-        pyautogui.click(1333, 642)
+        pyautogui.click(1347, 730)
         time.sleep(3)
         pyautogui.click(1606, 860)  #发送包裹礼物
+
+        package_gift = auto.locateOnScreen('../source_photoes/room/package_gift.png')   #获取本地图片位置
+        # print(login)
+        # print(login.left)
+        time.sleep(3)
+        auto.screenshot('../photoes/room/package_gift.png', region=(package_gift.left, package_gift.top, package_gift.width, package_gift.height))  # 截取登录成功图片
+
+        # 图片断言
+        image1 = cv2.imread("../source_photoes/room/package_gift.png")
+        image2 = cv2.imread("../photoes/room/package_gift.png")
+        difference = cv2.subtract(image1, image2)
+        result = not np.any(difference)
+        self.assertTrue(result, "发送包裹礼物失败~")
 
         time.sleep(3)
         pyautogui.click(1377, 586)
