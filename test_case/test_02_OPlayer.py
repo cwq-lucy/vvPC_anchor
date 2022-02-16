@@ -101,6 +101,7 @@ class testOplayer(unittest.TestCase):
         login = auto.locateOnScreen('../source_photoes/room/181818.png')   #获取本地图片位置
         # print(login)
         # print(login.left)
+        time.sleep(3)
         auto.screenshot('../photoes/room/181818.png', region=(login.left, login.top, login.width, login.height))  # 截取登录成功图片
 
         # 图片断言
@@ -112,7 +113,7 @@ class testOplayer(unittest.TestCase):
 
     # 贵族气泡选择及发送消息
     def testOplayer05(self):
-        time.sleep(3)
+        time.sleep(5)
         pyautogui.click(1385, 714)
         time.sleep(3)
         pyautogui.click(904, 425)
@@ -129,8 +130,9 @@ class testOplayer(unittest.TestCase):
         time.sleep(3)
 
         bubble = auto.locateOnScreen('../source_photoes/room/18181818.png')   #获取本地图片位置
-        print(bubble)
-        print(bubble.left)
+        # print(bubble)
+        # print(bubble.left)
+        time.sleep(3)
         auto.screenshot('../photoes/room/18181818.png', region=(bubble.left, bubble.top, bubble.width, bubble.height))  # 截取登录成功图片
 
         # 图片断言
@@ -154,10 +156,12 @@ class testOplayer(unittest.TestCase):
         pyautogui.write("1818181818")
         time.sleep(3)
         pyautogui.click(1552, 898)
+        time.sleep(3)
 
         Nobubble = auto.locateOnScreen('../source_photoes/room/1818181818.png')   #获取本地图片位置
         # print(login)
         # print(login.left)
+        time.sleep(3)
         auto.screenshot('../photoes/room/1818181818.png', region=(Nobubble.left, Nobubble.top, Nobubble.width, Nobubble.height))  # 截取登录成功图片
 
         # 图片断言
@@ -203,6 +207,7 @@ class testOplayer(unittest.TestCase):
         self.assertTrue(result, "发送私聊信息失败~")
 
     # 添加整蛊项目
+    @unittest.skip("skipping")
     def testOplayer07(self):
         time.sleep(3)
         pyautogui.click(1253, 894)
@@ -220,6 +225,7 @@ class testOplayer(unittest.TestCase):
         pyautogui.click(959, 581)
 
     # 修改整蛊项目
+    @unittest.skip("skipping")
     def testOplayer08(self):
         time.sleep(3)
         pyautogui.click(1255, 896)
@@ -243,6 +249,7 @@ class testOplayer(unittest.TestCase):
         pyautogui.click(1164, 748)
 
     # 删除整蛊项目
+    @unittest.skip("skipping")
     def testOplayer09(self):
         time.sleep(3)
         pyautogui.click(1255, 895)
@@ -343,7 +350,7 @@ class testOplayer(unittest.TestCase):
     #房间大banner跳转
     def testOplayer11(self):
         count = 0
-        nums = 6
+        nums = 12
         while (count < nums):
             time.sleep(1)
             tia = auto.locateOnScreen('../source_photoes/room/daojubanner.png')

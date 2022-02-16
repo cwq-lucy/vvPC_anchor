@@ -3,7 +3,6 @@ import unittest
 import HTMLTestRunner
 import time,os
 
-
 def creatsuite():
 	testunit = unittest.TestSuite()
 	# 定义测试文件查找的目录
