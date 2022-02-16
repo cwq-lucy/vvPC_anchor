@@ -276,12 +276,13 @@ class testOplayer(unittest.TestCase):
         result = not np.any(difference)
         self.assertTrue(result, "发送醒狮礼物失败~")
 
-        time.sleep(3)
+        time.sleep(5)
         pyautogui.click(1316, 586)
         time.sleep(3)
         pyautogui.click(1347, 730)
         time.sleep(3)
         pyautogui.click(1606, 860)  #发送包裹礼物
+        time.sleep(3)
 
         package_gift = auto.locateOnScreen('../source_photoes/room/package_gift.png')   #获取本地图片位置
         # print(login)
@@ -302,6 +303,20 @@ class testOplayer(unittest.TestCase):
         pyautogui.click(1335, 658)
         time.sleep(3)
         pyautogui.click(1607, 855)  #发送整蛊礼物
+        time.sleep(3)
+
+        prank = auto.locateOnScreen('../source_photoes/room/prank_gift.png')   #获取本地图片位置
+        # print(login)
+        # print(login.left)
+        time.sleep(3)
+        auto.screenshot('../photoes/room/prank_gift.png', region=(prank.left, prank.top, prank.width, prank.height))  # 截取登录成功图片
+
+        # 图片断言
+        image1 = cv2.imread("../source_photoes/room/prank_gift.png")
+        image2 = cv2.imread("../photoes/room/prank_gift.png")
+        difference = cv2.subtract(image1, image2)
+        result = not np.any(difference)
+        self.assertTrue(result, "发送整蛊礼物失败~")
 
         time.sleep(3)
         pyautogui.click(1627, 585)
@@ -310,6 +325,20 @@ class testOplayer(unittest.TestCase):
         time.sleep(3)
         pyautogui.click(1611, 858)  #发送盖章礼物
         pyautogui.click(1611, 1000)
+        time.sleep(3)
+
+        stamp = auto.locateOnScreen('../source_photoes/room/stamp_gift.png')   #获取本地图片位置
+        # print(login)
+        # print(login.left)
+        time.sleep(3)
+        auto.screenshot('../photoes/room/stamp_gift.png', region=(stamp.left, stamp.top, stamp.width, stamp.height))  # 截取登录成功图片
+
+        # 图片断言
+        image1 = cv2.imread("../source_photoes/room/stamp_gift.png")
+        image2 = cv2.imread("../photoes/room/stamp_gift.png")
+        difference = cv2.subtract(image1, image2)
+        result = not np.any(difference)
+        self.assertTrue(result, "发送盖章礼物失败~")
 
     #房间大banner跳转
     def testOplayer11(self):
